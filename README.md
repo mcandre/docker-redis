@@ -7,12 +7,11 @@ https://registry.hub.docker.com/u/mcandre/docker-redis/
 # EXAMPLE
 
 ```
-$ docker pull mcandre/docker-redis
-
-$ CONTAINER=$(docker run -d -p 6379:6379 mcandre/docker-redis)
-$ docker exec $CONTAINER redis-cli set dogmoon 3
+$ make
+docker build -t mcandre/docker-redis .
+docker exec 7ead42dd0e75b22d8042e3e42bd5224ef8be1ace5422a21821583f13a650d84a redis-cli set dogmoon 3
 OK
-$ docker exec $CONTAINER redis-cli get dogmoon
+docker exec 7ead42dd0e75b22d8042e3e42bd5224ef8be1ace5422a21821583f13a650d84a redis-cli get dogmoon
 3
 ```
 
@@ -20,10 +19,14 @@ $ docker exec $CONTAINER redis-cli get dogmoon
 
 * [Docker](https://www.docker.com/)
 
+## Optional
+
+* [make](http://www.gnu.org/software/make/)
+
 ## Debian/Ubuntu
 
 ```
-$ sudo apt-get install docker.io
+$ sudo apt-get install docker.io build-essential
 ```
 
 ## RedHat/Fedora/CentOS
@@ -40,6 +43,7 @@ $ sudo yum install docker-io
 
 ### Mac OS X
 
+* [Xcode](http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)
 * [Homebrew](http://brew.sh/)
 * [brew-cask](http://caskroom.io/)
 
@@ -53,42 +57,5 @@ $ brew install boot2docker
 * [Chocolatey](https://chocolatey.org/)
 
 ```
-> chocolatey install docker
-```
-
-# DEVELOPMENT
-
-## Build
-
-```
-$ git clone https://github.com/mcandre/docker-redis.git
-$ cd docker-redis/
-$ docker build -t mcandre/docker-redis .
-
-$ docker exec $CONTAINER redis-cli set dogmoon 3
-OK
-$ docker exec $CONTAINER redis-cli get dogmoon
-3
-```
-
-## Publish
-
-```
-$ docker push mcandre/docker-redis
-```
-
-## Cleanup
-
-Sometimes you want to halt and delete Docker containers or images.
-
-### Destroy all containers matching query
-
-```
-$ docker ps -a | grep -v IMAGE | grep docker-redis | awk '{ print $1 }' | xargs docker rm -f
-```
-
-### Destroy all images matching query
-
-```
-$ docker images | grep -v IMAGE | grep docker-redis | awk '{ print $3 }' | xargs docker rmi -f
+> chocolatey install docker make
 ```
