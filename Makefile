@@ -1,4 +1,4 @@
-IMAGE=mcandre/docker-redis:2.6
+IMAGE=mcandre/docker-redis:2.7
 
 all: run
 
