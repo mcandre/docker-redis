@@ -22,6 +22,7 @@ docker exec 7ead42dd0e75b22d8042e3e42bd5224ef8be1ace5422a21821583f13a650d84a red
 ## Optional
 
 * [make](http://www.gnu.org/software/make/)
+* [Node.js](https://nodejs.org/en/) (for dockerlint)
 
 ## Debian/Ubuntu
 
