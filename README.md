@@ -23,3 +23,5 @@ docker exec 7ead42dd0e75b22d8042e3e42bd5224ef8be1ace5422a21821583f13a650d84a red
 
 * [make](http://www.gnu.org/software/make/)
 * [Node.js](https://nodejs.org/en/) (for dockerlint)
+* [editorconfig-cli](https://github.com/amyboyd/editorconfig-cli) (e.g. `go get github.com/amyboyd/editorconfig-cli`)
+* [flcl](https://github.com/mcandre/flcl) (e.g. `go get github.com/mcandre/flcl/...`)
